@@ -3,7 +3,7 @@
   "version": "v1.0-beta",
   "description": "The administrative web app for the TSP mobile application.",
   "author": "M1L040 <milo4lontsi@gmail.com>",
-  "homepage": "https://github.com/Byt3Lab/TSP_Dash",
+  "git": "https://github.com/Byt3Lab/TSP_Dash",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.1.5",
