@@ -47,7 +47,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "build:staging": "env-cmd -f .env.staging npm run build",
     "build:production": "env-cmd -f .env.production npm run build",
     "predeploy": "yarn run build:production",
