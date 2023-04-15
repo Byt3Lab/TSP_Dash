@@ -14,6 +14,7 @@ import { useDeleteUsers } from "../hooks/useDeleteUsers";
 import { useUpdateUser } from "../hooks/useUpdateUser";
 import { useUsers } from "../hooks/useUsers";
 import { User } from "../types/user";
+import Tabs from "../components/Tabs";
 
 const UserManagement = () => {
   const snackbar = useSnackbar();
@@ -101,7 +102,46 @@ const UserManagement = () => {
   const handleSelectedChange = (newSelected: string[]) => {
     setSelected(newSelected);
   };
-
+  const FirstTab = () => {
+    return (
+      <div className="FirstTab">
+        <UserTable
+          processing={processing}
+          onDelete={handleOpenConfirmDeleteDialog}
+          onEdit={handleOpenUserDialog}
+          onSelectedChange={handleSelectedChange}
+          selected={selected}
+          users={data}
+        />
+        <ConfirmDialog
+          description={t("userManagement.confirmations.delete")}
+          pending={processing}
+          onClose={handleCloseConfirmDeleteDialog}
+          onConfirm={handleDeleteUsers}
+          open={openConfirmDeleteDialog}
+          title={t("common.confirmation")}
+        />
+        {openUserDialog && (
+          <UserDialog
+            onAdd={handleAddUser}
+            onClose={handleCloseUserDialog}
+            onUpdate={handleUpdateUser}
+            open={openUserDialog}
+            processing={processing}
+            user={userUpdated}
+          />
+        )}
+      </div>
+    );
+  };
+  const SecondTab = () => {
+    return (
+      <div className="SecondTab">
+        <p>Second Tab!! Hurray!!</p>
+        {/* Second  tab content will go here */}
+      </div>
+    );
+  };
   return (
     <React.Fragment>
       <AdminAppBar>
@@ -152,6 +192,7 @@ const UserManagement = () => {
           user={userUpdated}
         />
       )}
+      <Tabs/>
     </React.Fragment>
   );
 };

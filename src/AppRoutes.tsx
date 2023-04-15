@@ -50,13 +50,13 @@ const AppRoutes = () => {
         <PrivateRoute path="faq" element={<Faq />} />
         <PrivateRoute
           path="help"
-          // element={<HelpCenter />}
-          element={
+          element={<HelpCenter />}
+          /*element={
             <Navigate
               to={`/${process.env.PUBLIC_URL}/under-construction`}
               replace
             />
-          }
+          }*/
         />
         <PrivateRoute
           path="profile"
@@ -110,13 +110,13 @@ const AppRoutes = () => {
         />
         <PrivateRoute
           path="user-management"
-          // element={<UserManagement />}
-          element={
+          element={<UserManagement />}
+          /*element={
             <Navigate
               to={`/${process.env.PUBLIC_URL}/under-construction`}
               replace
             />
-          }
+          }*/
         />
       </PrivateRoute>
       <Route path="forgot-password" element={<ForgotPassword />} />
